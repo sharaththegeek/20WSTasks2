@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Leaderboard WebStacks</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    </head>
+    <body class="grey lighten-4">
+            <nav>
+                <div class="nav-wrapper deep-orange lighten-1">
+                <a href="/rankBoard" class="brand-logo center">Leaderboard</a>
+                <ul id="nav-mobile" class="right">
+                    <li><a href="/home">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <h3>Registration</h3>
+            <form action="/registerUser/" method="POST">{%csrf_token%}
+            <div class="row center-align">
+            <div class="input-field col s12">
+                <input id="firstName" name="firstName" type="text">
+                <label for="firstName">First Name</label>
+              </div>
+            <div class="input-field col s12">
+                <input id="lastName" name="lastName" type="text">
+                <label for="lastName">Last Name</label>
+            </div>
+            <div class="input-field col s12">
+                <input id="email" name="email" type="text">
+                <label for="email">Email ID</label>
+            </div>
+            <div class="input-field col s12">
+                <input id="password" name="password" type="password">
+                <label for="password">Password</label>
+            </div>
+            <div class="center-align">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Register
+                <i class="material-icons right">send</i>
+            </button>
+            </div>
+        </div>
+        </form>
+        </div>
+  
+</body>
+</html>

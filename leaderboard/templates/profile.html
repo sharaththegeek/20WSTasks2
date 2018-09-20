@@ -1,0 +1,35 @@
+{%load static%}
+<html>
+    <head>
+        <title>Leaderboard WebStacks</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="{%static 'leader.css'%}">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    </head>
+    <body class="grey lighten-4">
+            <nav>
+                <div class="nav-wrapper deep-orange lighten-1">
+                <a href="/rankBoard" class="brand-logo center">Leaderboard</a>
+                <ul id="nav-mobile" class="right">
+                    <li><a href="/profile">Profile</a></li>
+                    <li><a href="/logOut">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="card deep-orange accent-2 white-text">
+                <div class="center-align"><br><br>
+                <img src="{% static 'avatar1.svg' %}" alt="My image" class="profile circle responsive-img">
+                </div>
+                <h4 class="center-align">{{UPObj.firstName}} {{UPObj.lastName}}</h4>
+                <div class="center-align">
+                <p><b>Email ID:</b> {{UPObj.email.email}}</p>
+                <p><b>Points:</b> {{UPObj.points}}</p>
+                <br>
+                </div>
+            </div>
+        </div>
+    </body>
+    </html>

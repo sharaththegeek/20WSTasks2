@@ -1,0 +1,48 @@
+{%load static%}
+<html>
+    <head>
+        <title>Leaderboard WebStacks</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="{%static 'leader.css'%}">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    </head>
+    <body class="grey lighten-4">
+        <nav>
+            <div class="nav-wrapper deep-orange lighten-1">
+                <a href="/rankBoard" class="brand-logo center">Leaderboard</a>
+                <ul id="nav-mobile" class="right">
+                    <li><a href="/profile">Profile</a></li>
+                    <li><a href="/logOut">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <br>
+            <br>
+        {%for user in UsersTop%}
+         <div class="card-panel amber darken-2 white-text">
+             <img src="{% static 'avatar1.svg' %}" alt="My image" class="profile1 circle responsive-img">
+             <div style="align-self:center; padding-left:2em; padding-right:2em;">
+             <span>{{forloop.counter}}.</span>
+             <span>{{user.firstName}}</span></div>
+             <div style="align-self:center; flex-grow:5;">
+             <span class="right">{{user.points}}</span></div>
+         </div>
+        {%endfor%}
+        <ul class="collection">
+        {%for user in UsersOthers%}
+        <li class="collection-item">
+            <img src="{% static 'avatar1.svg' %}" alt="My image" class="profile2 circle responsive-img">
+            <div style="align-self:center; padding-left:2em; padding-right:2em;">
+            <span>{{forloop.counter|add:"3"}}.</span>
+            <span >{{user.firstName}}</span></div>
+            <div style="align-self:center; flex-grow:5;">
+                    <span class="right">{{user.points}}</span></div>
+        </li>
+        {%endfor%}
+        </ul>
+    </div>
+    </body>
+    </html>

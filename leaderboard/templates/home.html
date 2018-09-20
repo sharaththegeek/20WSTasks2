@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Leaderboard WebStacks</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    </head>
+    <body class="grey lighten-4">
+            <nav>
+                <div class="nav-wrapper deep-orange lighten-1">
+                <a href="/rankBoard" class="brand-logo center">Leaderboard</a>
+            </div>
+        </nav>
+        <div class="container">
+            <br>
+            <br>
+            <br>
+            <div class="row">
+            <div class="card col s10 m6 l6 offset-s1 offset-m3 offset-l3">
+                <div class="center-align">
+                <span class="card-title">Login</span>
+                <p style="color:{{color}};">{{message}}</p></div>
+                <div class="row">
+                <form method="POST" class="col s12" action="/login/">{%csrf_token%}
+                <div class="input-field col s12 m8 l8 offset-m2 offset-l2">
+                    <input id="email" name="email" type="text" class="validate">
+                    <label for="email">Email</label>
+                </div>
+                <br>
+                <div class="input-field col s12 m8 l8 offset-m2 offset-l2">
+                     <input id="password" name="password" type="password" class="validate">
+                     <label for="password">Password</label>
+                </div>
+                <button class="btn deep-orange lighten-1 waves-effect waves-light col s12 m6 l4 offset-m3 offset-l4" type="submit" name="action">Login
+                        <i class="material-icons right">send</i>
+                    </button>
+            </form> 
+        </div>      
+                <div class="center-align">
+                <a href="/register">Want to join? Register now!</a></div>
+            </div>
+            </div>
+        </div>
+    </body>
+</html>

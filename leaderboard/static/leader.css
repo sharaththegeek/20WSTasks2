@@ -1,0 +1,22 @@
+img.profile1{
+    height:50px;
+}
+img.profile2{
+    height:40px;
+}
+.card-panel{
+    display:flex;
+    align-content: space-between;
+    font-size:2em;
+    font-weight: bolder;
+}
+.collection-item{
+    display:flex;
+    align-content: space-between;
+    font-family:sans-serif;
+    font-weight: bold;
+    font-size:1em;
+}
+img.profile{
+  height:100px;  
+};
