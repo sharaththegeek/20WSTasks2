@@ -32,6 +32,7 @@ class UserDetails(forms.Form):
     lastName=forms.CharField(max_length=20)
     email=forms.EmailField()
     password=forms.CharField(max_length=20)
+    sex=forms.CharField(max_length=10)
     
     def clean_email(self):
         email=self.cleaned_data.get('email')

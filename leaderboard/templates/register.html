@@ -22,23 +22,35 @@
             <form action="/registerUser/" method="POST">{%csrf_token%}
             <div class="row center-align">
             <div class="input-field col s12">
-                <input id="firstName" name="firstName" type="text">
+                <input id="firstName" name="firstName" type="text" required>
                 <label for="firstName">First Name</label>
               </div>
             <div class="input-field col s12">
-                <input id="lastName" name="lastName" type="text">
+                <input id="lastName" name="lastName" type="text" required>
                 <label for="lastName">Last Name</label>
             </div>
             <div class="input-field col s12">
-                <input id="email" name="email" type="text">
+                <input id="email" name="email" type="text" required>
                 <label for="email">Email ID</label>
             </div>
             <div class="input-field col s12">
-                <input id="password" name="password" type="password">
+                <input id="password" name="password" type="password" pattern=".{6,}" class="validate" required>
                 <label for="password">Password</label>
             </div>
+            <div class="">
+            <label>
+                <h6>Sex</h6>
+                <input id="sex" name="sex" value="male" type="radio" checked/>
+                <span>Male</span>
+            </label>
+            <label>
+                <input id="sex" name="sex" value="female" type="radio" />
+                <span>Female</span>
+            </label>
+            </div>
+            <br><br>
             <div class="center-align">
-            <button class="btn waves-effect waves-light" type="submit" name="action">Register
+            <button class="btn deep-orange lighten-1 waves-effect waves-light" type="submit" name="action">Register
                 <i class="material-icons right">send</i>
             </button>
             </div>

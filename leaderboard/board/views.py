@@ -34,7 +34,7 @@ def registerUser(request):
     if request.POST:
         UDObj=UserDetails(request.POST)
         if UDObj.is_valid():
-            UPObj=UserProfile(firstName=UDObj.cleaned_data['firstName'],lastName=UDObj.cleaned_data['lastName'])
+            UPObj=UserProfile(firstName=UDObj.cleaned_data['firstName'],lastName=UDObj.cleaned_data['lastName'],sex=UDObj.cleaned_data['sex'])
             UPObj.points=0
             UObj=User(email=UDObj.cleaned_data['email'],password=UDObj.cleaned_data['password'])
             UObj.save()
@@ -56,8 +56,7 @@ def rankBoard(request):
         cemail=request.session['email']
         UsersTop=UserProfile.objects.all().order_by('-points')[:3]
         UsersOthers=UserProfile.objects.all().order_by('-points')[3:]
-        CurrentUser=UserProfile.objects.get(email__email=cemail)
-        return render(request,"rankBoard.html",{"UsersTop":UsersTop,"CurrentUser":CurrentUser,"UsersOthers":UsersOthers})
+        return render(request,"rankBoard.html",{"UsersTop":UsersTop,"UsersOthers":UsersOthers})
     else:
         return render(request,"home.html",{"message":"Yikes! You have to login first","color":"red"})
 

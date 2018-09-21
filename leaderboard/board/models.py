@@ -12,4 +12,5 @@ class UserProfile(models.Model):
     firstName=models.CharField(max_length=20)
     lastName=models.CharField(max_length=20)
     email=models.OneToOneField(User)
+    sex=models.CharField(max_length=10)
     points=models.IntegerField()

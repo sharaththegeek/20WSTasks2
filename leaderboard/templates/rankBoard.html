@@ -23,7 +23,11 @@
             <br>
         {%for user in UsersTop%}
          <div class="card-panel amber darken-2 white-text">
+             {%if user.sex == "male"%}
              <img src="{% static 'avatar1.svg' %}" alt="My image" class="profile1 circle responsive-img">
+             {%else%}
+             <img src="{% static 'girl1.svg' %}" alt="My image" class="profile1 circle responsive-img">
+             {%endif%}
              <div style="align-self:center; padding-left:2em; padding-right:2em;">
              <span>{{forloop.counter}}.</span>
              <span>{{user.firstName}}</span></div>
@@ -34,7 +38,11 @@
         <ul class="collection">
         {%for user in UsersOthers%}
         <li class="collection-item">
-            <img src="{% static 'avatar1.svg' %}" alt="My image" class="profile2 circle responsive-img">
+            {%if user.sex == "male"%}
+            <img src="{% static 'avatar1.svg' %}" alt="My image" class="profile1 circle responsive-img">
+            {%else%}
+            <img src="{% static 'girl1.svg' %}" alt="My image" class="profile1 circle responsive-img">
+            {%endif%}
             <div style="align-self:center; padding-left:2em; padding-right:2em;">
             <span>{{forloop.counter|add:"3"}}.</span>
             <span >{{user.firstName}}</span></div>
